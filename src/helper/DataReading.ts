@@ -1,14 +1,13 @@
 import fs from "fs/promises";
 import { cwd } from "process";
 
-interface Division {
+export interface Division {
   id: number;
   name: string;
   bn_name: string;
   url: string;
 }
-
-interface District {
+export interface District {
   id: number;
   division_id: number;
   name: string;
@@ -18,7 +17,7 @@ interface District {
   url: string;
 }
 
-interface Upaliza {
+export interface Upaliza {
   id: number;
   district_id: number;
   name: string;
@@ -26,7 +25,7 @@ interface Upaliza {
   url: string;
 }
 
-interface Union {
+export interface Union {
   id: number;
   upazilla_id: number;
   name: string;
