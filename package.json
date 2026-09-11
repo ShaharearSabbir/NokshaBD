@@ -1,16 +1,25 @@
 {
   "name": "NokshaBD",
   "version": "1.0.0",
-  "description": "",
+  "description": "A REST API for Bangladeshi administrative geography (divisions, districts, upazilas, and unions).",
   "main": "index.js",
   "scripts": {
     "dev": "tsx watch ./src/server.ts",
     "build": "tsc",
     "start": "node ./dist/server.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "bangladesh",
+    "divisions",
+    "districts",
+    "upazilas",
+    "unions",
+    "api",
+    "express",
+    "typescript"
+  ],
+  "author": "Shaharear Rahman Sabbir",
+  "license": "MIT",
   "devEngines": {
     "packageManager": {
       "name": "pnpm",
