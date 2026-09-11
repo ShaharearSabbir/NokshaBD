@@ -2,14 +2,14 @@ import fs from "fs/promises";
 import { cwd } from "process";
 
 export interface Division {
-  id: number;
+  id: string;
   name: string;
   bn_name: string;
   url: string;
 }
 export interface District {
-  id: number;
-  division_id: number;
+  id: string;
+  division_id: string;
   name: string;
   bn_name: string;
   lat: number;
@@ -18,16 +18,16 @@ export interface District {
 }
 
 export interface Upaliza {
-  id: number;
-  district_id: number;
+  id: string;
+  district_id: string;
   name: string;
   bn_name: string;
   url: string;
 }
 
 export interface Union {
-  id: number;
-  upazilla_id: number;
+  id: string;
+  upazilla_id: string;
   name: string;
   bn_name: string;
   url: string;
@@ -60,7 +60,7 @@ export class AreaList {
     return this.divisionsCache;
   }
 
-  static async getDistrict(division_id?: number): Promise<District[]> {
+  static async getDistrict(division_id?: string): Promise<District[]> {
     if (!this.districtsCache) {
       this.districtsCache =
         (await this.readingJson<District>(
@@ -74,7 +74,7 @@ export class AreaList {
     return this.districtsCache;
   }
 
-  static async getUpazila(district_id?: number): Promise<Upaliza[]> {
+  static async getUpazila(district_id?: string): Promise<Upaliza[]> {
     if (!this.upazilasCache) {
       this.upazilasCache =
         (await this.readingJson<Upaliza>(`${cwd()}/src/data/upazilas.json`)) ||
@@ -87,7 +87,7 @@ export class AreaList {
     return this.upazilasCache;
   }
 
-  static async getUnion(upazilla_id?: number): Promise<Union[]> {
+  static async getUnion(upazilla_id?: string): Promise<Union[]> {
     if (!this.unionsCache) {
       this.unionsCache =
         (await this.readingJson<Union>(`${cwd()}/src/data/unions.json`)) || [];
