@@ -1,0 +1,18 @@
+services:
+  nokshabd:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nokshabd
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - NODE_ENV=production
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:3000/"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
