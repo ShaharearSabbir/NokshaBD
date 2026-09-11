@@ -17,10 +17,10 @@ export class ApiResponse {
     });
   }
 
-  static badRequest(res: Response) {
-    res.status(StatusCodes.BAD_REQUEST).json({
+  static notFound(res: Response) {
+    res.status(StatusCodes.NOT_FOUND).json({
       success: false,
-      message: "bad request",
+      message: "Not Found please insert the currect id",
     });
   }
 }

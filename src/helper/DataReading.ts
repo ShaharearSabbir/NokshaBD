@@ -44,7 +44,7 @@ export class AreaList {
       const data = await fs.readFile(path, "utf-8");
       return JSON.parse(data) as T[];
     } catch (error) {
-      console.error(error);
+      throw new Error("Json File  not found");
       return null;
     }
   }
