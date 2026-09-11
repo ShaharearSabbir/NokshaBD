@@ -5,3 +5,4 @@ pnpm-workspace.yaml
 !.env.example
 
 dist
+.vercel
