@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: nokshabd
+    runtime: docker
+    plan: free # or starter/standard based on your needs
+    region: singapore # best latency for Bangladesh
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: PORT
+        value: 3000
+      - key: NODE_ENV
+        value: production
+    healthCheckPath: /
