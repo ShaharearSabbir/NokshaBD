@@ -47,7 +47,7 @@ What was added:
 
 ```bash
 # Clone the repository
-git clone https://github.com/<your-username>/NokshaBD.git
+git clone https://github.com/ShaharearSabbir/NokshaBD.git
 cd NokshaBD
 
 # Install dependencies
@@ -85,7 +85,9 @@ The server will start at `http://localhost:3000`.
 
 ## API Endpoints
 
-Base URL: `http://localhost:3000`
+**Live demo:** [https://nokshabd.onrender.com](https://nokshabd.onrender.com/)
+
+Base URL: `http://localhost:3000` (or the live URL above)
 
 ### Health Check
 
@@ -158,7 +160,7 @@ Errors:
 | `404`  | No data for the given ID    | `Not Found please insert the currect id` |
 | `500`  | Internal server error       | `internal server error`              |
 
-> **Note:** An empty array is returned with `200 OK` when a valid parent ID has no children (e.g. a district ID that has no upazilas).
+> **Note:** IDs that don't match any record (e.g. `GET /unions/999`) currently return an **empty array with `200 OK`**, since the lookup filters over the dataset and never returns no result. The `404` branch exists in the code but is only hit if a lookup itself fails.
 
 ## Project Structure
 
